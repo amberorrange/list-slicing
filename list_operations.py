@@ -49,7 +49,7 @@ def top(input_list):
 
     """
 
-    return input_list[0:-1]
+    return input_list[:-1]
 
 
 def first_three(input_list):
@@ -151,6 +151,11 @@ def replace_third_and_last(input_list):
     input_list[2] = 37
     input_list[-1] = 37
 
+    # alternate solution
+    # input_list[2], input_list[-1] = 37, 37
+
+
+
 
 def replace_middle(input_list):
     """Replace all elements of a list but the first two and last two with 42 and 37.
@@ -184,6 +189,10 @@ def delete_third_and_seventh(input_list):
     """
     del input_list[2]
     del input_list[5]
+
+    # alternate solution
+    # input_list[2:3] = []
+    # input_list[5:6] = []
     
 
 
@@ -202,6 +211,7 @@ def delete_middle(input_list):
     """
     del input_list[2:-2]
 
+    # alternate solution: input_list[2:-2] = []
 
 
 

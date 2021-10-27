@@ -67,7 +67,8 @@ def custom_extend(input_list, second_list):
 
     """
 
-    input_list[-1:] = input_list[-1], second_list[0:]
+    list_length = custom_len(input_list)
+    input_list[list_length:list_length] = second_list
 
 
 def custom_insert(input_list, index, value):
@@ -85,7 +86,7 @@ def custom_insert(input_list, index, value):
 
     """
 
-    pass
+    input_list[index:index] = [value]
 
 
 def custom_remove(input_list, value):
@@ -109,6 +110,15 @@ def custom_remove(input_list, value):
             del input_list[i]
             break
 
+    # alternate: 
+    #    counter = 0
+
+    # for i in input_list:
+    #     if i == value:
+    #         input_list[counter:counter + 1] = []
+    #         break
+
+    #     counter += 1
 
 
 def custom_pop(input_list):
@@ -127,7 +137,7 @@ def custom_pop(input_list):
 
     """
     value = input_list[-1]
-    del input_list[-1]
+    input_list[-1:] = []
 
     return value
 
@@ -189,7 +199,7 @@ def custom_reverse(input_list):
 
     """
 
-    input_list = input_list[::-1]
+    input_list.reverse()
 
 
 def custom_contains(input_list, value):
