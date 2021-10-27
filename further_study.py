@@ -16,7 +16,11 @@ def custom_len(input_list):
 
     """
 
-    return 0
+    count = 0
+    for item in input_list:
+        count += 1
+
+    return count
 
 
 # For the next four exercises, you'll need to be clever and think about ways
@@ -44,7 +48,7 @@ def custom_append(input_list, value):
 
     """
 
-    pass
+    input_list[-1:] = input_list[-1], value
 
 
 def custom_extend(input_list, second_list):
@@ -63,7 +67,7 @@ def custom_extend(input_list, second_list):
 
     """
 
-    pass
+    input_list[-1:] = input_list[-1], second_list[0:]
 
 
 def custom_insert(input_list, index, value):
@@ -100,7 +104,11 @@ def custom_remove(input_list, value):
 
     """
 
-    pass
+    for i, item in enumerate(input_list):
+        if item == value:
+            del input_list[i]
+            break
+
 
 
 def custom_pop(input_list):
@@ -118,8 +126,10 @@ def custom_pop(input_list):
         ['Jan', 'Feb']
 
     """
+    value = input_list[-1]
+    del input_list[-1]
 
-    return None
+    return value
 
 
 def custom_index(input_list, value):
@@ -135,7 +145,11 @@ def custom_index(input_list, value):
 
     """
 
-    return 0
+    for i, item in enumerate(input_list):
+        if item == value:
+            return i
+
+
 
 
 def custom_count(input_list, value):
@@ -151,7 +165,12 @@ def custom_count(input_list, value):
 
     """
 
-    return 0
+    count = 0 
+    for item in input_list: 
+        if item == value: 
+            count += 1 
+    
+    return count
 
 
 def custom_reverse(input_list):
@@ -170,7 +189,7 @@ def custom_reverse(input_list):
 
     """
 
-    pass
+    input_list = input_list[::-1]
 
 
 def custom_contains(input_list, value):
@@ -190,7 +209,10 @@ def custom_contains(input_list, value):
 
     """
 
-    return None
+    for item in input_list:
+        if item == value:
+            return True
+    return False
 
 
 def custom_equality(some_list, another_list):
@@ -209,7 +231,7 @@ def custom_equality(some_list, another_list):
 
     """
 
-    return None
+    return some_list == another_list
 
 
 # This is the part were we actually run the doctests.
